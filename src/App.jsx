@@ -8,6 +8,8 @@ import SigninForm from './components/SigninForm/SigninForm';
 import * as authService from '../src/services/authService';
 import ItemList from './components/ItemList/ItemList';
 import * as itemService from './services/itemService';
+import ItemDetails from './components/ItemDetails/ItemDetails';
+import CategoryList from './components/CategoriesList/CategoriesList';
 
 export const AuthedUserContext = createContext(null);
 
@@ -16,10 +18,18 @@ const App = () => {
 
   const [items, setItems] = useState([]);
 
+  const [category, setCategory] = useState(null);
+
+
   const handleSignout = () => {
     authService.signout();
     setUser(null);
   };
+
+  const handleCategory = (newCategory) => {
+    setCategory(newCategory)
+  };
+
 
   useEffect(() => {
     const fetchAllItems = async () => {
@@ -37,8 +47,13 @@ const App = () => {
           {user ? (
             // Protected Routes
             <>
-            <Route path="/" element={<Dashboard user={user} />} />
-            <Route path="/items" element={<ItemList items={items}/>} />
+              <Route path="/" element={<Dashboard user={user} />} />
+              {category ?
+                <Route path="/items" element={<ItemList items={items} category={category} />} />
+                :
+                <Route path="/items" element={<CategoryList handleCategory={handleCategory} />} />
+              }
+              <Route path="/items/:itemId" element={<ItemDetails />} />
             </>
           ) : (
             // Public Routes

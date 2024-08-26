@@ -1,9 +1,18 @@
 import { Link } from 'react-router-dom';
 
 const ItemList = (props) => {
+    
+    if(!props.items.length) return(<h1>Nothing here.</h1>)
+
+    const categoryList = props.items.filter(item => {
+       return props.category === item.category
+    })
+    console.log(categoryList)
+
     return (
     <main>
-        {props.items.map((item) => (
+
+        {categoryList.map((item) => (
             <Link key={item._id} to={`/items/${item._id}`}>
                 <article>
                     <header>
@@ -12,9 +21,7 @@ const ItemList = (props) => {
                             Owned by {item.owner.username}
                         </p>
                     </header>
-                    <p>{item.description}</p>
                 </article>
-            
             </Link>
         ))}
     </main>
