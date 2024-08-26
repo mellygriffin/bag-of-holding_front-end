@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     const fetchAllItems = async () => {
       const itemsData = await itemService.index();
-      console.log('itemsData:', itemsData);
+      setItems(itemsData);
     };
     if (user) fetchAllItems();
   }, [user]);
@@ -38,7 +38,7 @@ const App = () => {
             // Protected Routes
             <>
             <Route path="/" element={<Dashboard user={user} />} />
-            <Route path="/items" element={<ItemList />} />
+            <Route path="/items" element={<ItemList items={items}/>} />
             </>
           ) : (
             // Public Routes
