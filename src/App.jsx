@@ -48,11 +48,11 @@ const App = () => {
             // Protected Routes
             <>
               <Route path="/" element={<Dashboard user={user} />} />
-              {category ?
-                <Route path="/items" element={<ItemList items={items} category={category} />} />
-                :
+              
+                <Route path="/items/:category" element={<ItemList items={items} />} />
+                
                 <Route path="/items" element={<CategoryList handleCategory={handleCategory} />} />
-              }
+              
               <Route path="/items/:itemId" element={<ItemDetails />} />
             </>
           ) : (

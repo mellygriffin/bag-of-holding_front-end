@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
 
 const ItemList = (props) => {
     
-    if(!props.items.length) return(<h1>Nothing here.</h1>)
+    const {category} = useParams();
+    if(!category) return(<h1>Loading...</h1>)
 
     const categoryList = props.items.filter(item => {
-       return props.category === item.category
+       return category === item.category
     })
     console.log(categoryList)
 

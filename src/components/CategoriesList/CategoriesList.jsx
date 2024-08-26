@@ -3,17 +3,13 @@ import { Link } from 'react-router-dom';
 const CategoryList = (props) => {
 
 
-    const handleClick = (event) => {
-        props.handleCategory(event.target.id)
-    }
-
     return (
         <div>
 
-            <button id="Gear" onClick={handleClick}>Gear</button>
-            <button id="Books" onClick={handleClick}>Books</button>
-            <button id="Treasure" onClick={handleClick}>Treasure</button>
-            <button id="Potions" onClick={handleClick}>Potions</button>
+            <button id="Gear">Gear</button>
+            <Link to="/items/Books"><button id="Books">Books</button></Link>
+            <button id="Treasure">Treasure</button>
+            <button id="Potions">Potions</button>
 
         </div>
     );
