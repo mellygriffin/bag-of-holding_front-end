@@ -39,12 +39,19 @@ const App = () => {
     navigate('/items');
   };
 
+  const handleDeleteItem = async (itemId) => {
+    const deletedItem = await itemService.deleteItem(itemId);
+    setItems(items.filter((item) => item._id !== deletedItem._id));
+    navigate('/items');
+  };
+
 
   useEffect(() => {
     const fetchAllItems = async () => {
       const itemsData = await itemService.index();
       setItems(itemsData);
     };
+
     if (user) fetchAllItems();
   }, [user]);
 
@@ -62,7 +69,7 @@ const App = () => {
                 
                 <Route path="/items" element={<CategoryList handleCategory={handleCategory} />} />
               
-              <Route path="/items/:category/:itemId" element={<ItemDetails />} />
+              <Route path="/items/:category/:itemId" element={<ItemDetails handleDeleteItem={handleDeleteItem}/>} />
               <Route path="/items/new" element={<ItemForm handleAddItem={handleAddItem} />} />
             </>
           ) : (

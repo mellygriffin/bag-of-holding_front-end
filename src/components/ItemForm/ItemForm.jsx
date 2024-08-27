@@ -3,7 +3,7 @@ import { useState } from 'react';
 const ItemForm = (props) => {
     const [formData, setFormData] = useState({
         name: '',
-        category: '',
+        category: 'Gear',
         isMagical: false,
         description: '',
     });
@@ -20,20 +20,20 @@ const ItemForm = (props) => {
       return (
         <main>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name-input">Name</label>
+                <label htmlFor="name">Name</label>
                 <input
                 required
                 type="text"
                 name="name"
-                id="name-input"
+                id="name"
                 value={formData.name}
                 onChange={handleChange}
                 />
-                <label htmlFor="category-input">Category</label>
+                <label htmlFor="category">Category</label>
                 <select
                 required
                 name="category"
-                id="category-input"
+                id="category"
                 value={formData.category}
                 onChange={handleChange}
                 >
@@ -42,20 +42,20 @@ const ItemForm = (props) => {
                 <option value="Potions">Potions</option>
                 <option value="Books">Books</option>
                 </select>
-                <label htmlFor="isMagical-input">Is it Magical?</label>
+                <label htmlFor="isMagical">Is it Magical?</label>
                 <input
                 type="checkbox"
                 name="isMagical"
-                id="isMagical-input"
+                id="isMagical"
                 value={formData.isMagical}
                 onChange={handleChange}
                 />
-                <label htmlFor="description-input">Description</label>
+                <label htmlFor="description">Description</label>
                 <input
                 required
                 type="text"
                 name="description"
-                id="description-input"
+                id="description"
                 value={formData.description}
                 onChange={handleChange}
                 />

@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { AuthedUserContext } from '../../App';
+import { useState, useEffect, useContext } from 'react';
 import * as itemService from '../../services/itemService';
 
 const ItemDetails = (props) => {
@@ -7,6 +8,8 @@ const ItemDetails = (props) => {
     const { itemId } = useParams();
 
     const [item, setItem] = useState(null);
+
+    const user = useContext(AuthedUserContext);
 
     useEffect(() => {
         const fetchItem = async () => {
@@ -29,6 +32,12 @@ const ItemDetails = (props) => {
             <p>
                 {item.isMagical ? "This item is magical!" : "This item isn't magical..."}
             </p>
+
+            {item.owner._id === user._id && (
+                <>
+                <button onClick={() => props.handleDeleteItem(itemId)}>Delete</button>
+                </>
+            )}
 
             </section>
         </main> 

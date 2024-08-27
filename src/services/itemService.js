@@ -40,9 +40,25 @@ const index = async () => {
       console.log(error);
     }
   };
+
+  //Delete Item Route
+  const deleteItem = async (itemId) => {
+    try {
+      const res = await fetch(`${BASE_URL}/${itemId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   
   export { 
     index,
     show,
-    create
+    create,
+    deleteItem
    };
