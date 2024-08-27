@@ -51,6 +51,7 @@ const ItemForm = (props) => {
                 value={formData.name}
                 onChange={handleChange}
                 />
+                <p></p>
                 <label htmlFor="category">Category</label>
                 <select
                 required
@@ -64,6 +65,7 @@ const ItemForm = (props) => {
                 <option value="Potions">Potions</option>
                 <option value="Books">Books</option>
                 </select>
+                <p></p>
                 <label htmlFor="isMagical">Is it Magical?</label>
                 <input
                 type="checkbox"
@@ -73,15 +75,18 @@ const ItemForm = (props) => {
                 checked={formData.isMagical ? true : false}
                 onChange={handleChange}
                 />
+                <p></p>
                 <label htmlFor="description">Description</label>
-                <input
+                <textarea
                 required
                 type="text"
                 name="description"
                 id="description"
                 value={formData.description}
                 onChange={handleChange}
+                style={{ width: '200px', height: '100px' }}
                 />
+                <p></p>
                 <button type="submit">Submit</button>
             </form>
         </main>
