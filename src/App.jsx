@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Landing from './components/Landing/Landing';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -10,6 +10,7 @@ import ItemList from './components/ItemList/ItemList';
 import * as itemService from './services/itemService';
 import ItemDetails from './components/ItemDetails/ItemDetails';
 import CategoryList from './components/CategoriesList/CategoriesList';
+import ItemForm from './components/ItemForm/ItemForm';
 
 export const AuthedUserContext = createContext(null);
 
@@ -20,6 +21,8 @@ const App = () => {
 
   const [category, setCategory] = useState(null);
 
+  const navigate = useNavigate();
+
 
   const handleSignout = () => {
     authService.signout();
@@ -28,6 +31,12 @@ const App = () => {
 
   const handleCategory = (newCategory) => {
     setCategory(newCategory)
+  };
+
+  const handleAddItem = async (itemFormData) => {
+    const newItem = await itemService.create(itemFormData);
+    setItems([newItem, ...items]);
+    navigate('/items');
   };
 
 
@@ -54,7 +63,7 @@ const App = () => {
                 <Route path="/items" element={<CategoryList handleCategory={handleCategory} />} />
               
               <Route path="/items/:category/:itemId" element={<ItemDetails />} />
-              <Route path="/items/new" element={<h1>New Item</h1>} />
+              <Route path="/items/new" element={<ItemForm handleAddItem={handleAddItem} />} />
             </>
           ) : (
             // Public Routes
