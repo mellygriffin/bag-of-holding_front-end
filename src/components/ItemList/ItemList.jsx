@@ -15,7 +15,7 @@ const ItemList = (props) => {
     <main>
 
         {categoryList.map((item) => (
-            <Link key={item._id} to={`/items/${item._id}`}>
+            <Link key={item._id} to={`/items/${category}/${item._id}`}>
                 <article>
                     <header>
                         <h2>{item.name}</h2>

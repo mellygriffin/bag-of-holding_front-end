@@ -3,22 +3,20 @@ import { useState, useEffect } from 'react';
 import * as itemService from '../../services/itemService';
 
 const ItemDetails = (props) => {
+    
     const { itemId } = useParams();
-    console.log('itemId', itemId);
 
     const [item, setItem] = useState(null);
 
     useEffect(() => {
         const fetchItem = async () => {
             const itemData = await itemService.show(itemId);
-            console.log('itemData', itemData);
             setItem(itemData);
         };
         fetchItem();
     }, [itemId]);
 
-    console.log('item state:', item);
-
+    
     if (!item) return <main>Loading...</main>;
     return (
         <main>

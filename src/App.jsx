@@ -53,7 +53,8 @@ const App = () => {
                 
                 <Route path="/items" element={<CategoryList handleCategory={handleCategory} />} />
               
-              <Route path="/items/:itemId" element={<ItemDetails />} />
+              <Route path="/items/:category/:itemId" element={<ItemDetails />} />
+              <Route path="/items/new" element={<h1>New Item</h1>} />
             </>
           ) : (
             // Public Routes
