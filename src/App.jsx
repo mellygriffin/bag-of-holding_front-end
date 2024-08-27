@@ -64,12 +64,14 @@ const App = () => {
             // Protected Routes
             <>
               <Route path="/" element={<Dashboard user={user} />} />
-              
-                <Route path="/items/:category" element={<ItemList items={items} />} />
-                
-                <Route path="/items" element={<CategoryList handleCategory={handleCategory} />} />
-              
-              <Route path="/items/:category/:itemId" element={<ItemDetails handleDeleteItem={handleDeleteItem}/>} />
+
+              <Route path="/items/:category" element={<ItemList items={items} />} />
+
+              <Route path="/items" element={<CategoryList handleCategory={handleCategory} />} />
+
+              <Route path="/items/:itemId/edit" element={<ItemForm />} />
+
+              <Route path="/items/:category/:itemId" element={<ItemDetails handleDeleteItem={handleDeleteItem} />} />
               <Route path="/items/new" element={<ItemForm handleAddItem={handleAddItem} />} />
             </>
           ) : (

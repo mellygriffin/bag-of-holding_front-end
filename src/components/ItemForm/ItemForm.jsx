@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const ItemForm = (props) => {
+  const { itemId } = useParams();
+
     const [formData, setFormData] = useState({
         name: '',
         category: 'Gear',
@@ -20,6 +23,7 @@ const ItemForm = (props) => {
       return (
         <main>
             <form onSubmit={handleSubmit}>
+              <h1>{itemId ? 'Edit Item' : 'New Item'}</h1>
                 <label htmlFor="name">Name</label>
                 <input
                 required
