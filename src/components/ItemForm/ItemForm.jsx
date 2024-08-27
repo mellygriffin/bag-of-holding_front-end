@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import * as itemService from '../../services/itemService';
 
 const ItemForm = (props) => {
   const { itemId } = useParams();
@@ -11,13 +12,25 @@ const ItemForm = (props) => {
         description: '',
     });
 
+    useEffect(() => {
+      const fetchItem = async () => {
+        const itemData = await itemService.show(itemId);
+        setFormData(itemData);
+      };
+      if (itemId) fetchItem();
+    }, [itemId]);
+
     const handleChange = (evt) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
       };
     
       const handleSubmit = (evt) => {
         evt.preventDefault();
-        props.handleAddItem(formData);
+        if (itemId) {
+          props.handleUpdateItem(itemId, formData);
+        } else {
+          props.handleAddItem(formData);
+        }
       };
 
       return (

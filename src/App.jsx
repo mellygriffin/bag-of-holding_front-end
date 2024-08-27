@@ -45,6 +45,12 @@ const App = () => {
     navigate('/items');
   };
 
+  const handleUpdateItem = async (itemId, itemFormData) => {
+    const updatedItem = await itemService.update(itemId, itemFormData);
+    setItems(items.map((item) => (itemId === item._id ? updatedItem : item)));
+    navigate(`/items/${category}/${itemId}`);
+  };
+
 
   useEffect(() => {
     const fetchAllItems = async () => {
@@ -69,7 +75,7 @@ const App = () => {
 
               <Route path="/items" element={<CategoryList handleCategory={handleCategory} />} />
 
-              <Route path="/items/:itemId/edit" element={<ItemForm />} />
+              <Route path="/items/:itemId/edit" element={<ItemForm handleUpdateItem={handleUpdateItem}/>} />
 
               <Route path="/items/:category/:itemId" element={<ItemDetails handleDeleteItem={handleDeleteItem} />} />
               <Route path="/items/new" element={<ItemForm handleAddItem={handleAddItem} />} />

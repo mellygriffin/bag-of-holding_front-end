@@ -55,10 +55,28 @@ const index = async () => {
       console.log(error);
     }
   };
+
+  //Update Item Route
+  async function update(itemId, itemFormData) {
+    try {
+      const res = await fetch(`${BASE_URL}/${itemId}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(itemFormData),
+      });
+      return res.json();
+    } catch(error) {
+      console.log(error);
+    }
+  }
   
   export { 
     index,
     show,
     create,
-    deleteItem
+    deleteItem,
+    update
    };
