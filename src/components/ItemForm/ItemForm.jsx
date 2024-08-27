@@ -21,7 +21,12 @@ const ItemForm = (props) => {
     }, [itemId]);
 
     const handleChange = (evt) => {
+      if (evt.target.name === "isMagical") {
+        setFormData({ ...formData, [evt.target.name]: evt.target.value === "true" ? false : true });
+        console.log(evt.target.value)
+      } else {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
+      }
       };
     
       const handleSubmit = (evt) => {
@@ -65,6 +70,7 @@ const ItemForm = (props) => {
                 name="isMagical"
                 id="isMagical"
                 value={formData.isMagical}
+                checked={formData.isMagical ? true : false}
                 onChange={handleChange}
                 />
                 <label htmlFor="description">Description</label>
