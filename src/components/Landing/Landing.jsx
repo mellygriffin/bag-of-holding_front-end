@@ -5,7 +5,7 @@ const Landing = (props) => {
   return (
     <main>
       <h1>Bag of Holding</h1>
-      <ul>
+      <ul id="landing-list">
       {landingItems.slice(-3)}
       </ul>
     </main>
