@@ -58,7 +58,7 @@ const App = () => {
       setItems(itemsData);
     };
 
-    if (user) fetchAllItems();
+  fetchAllItems();
   }, [user]);
 
   return (

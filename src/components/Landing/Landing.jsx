@@ -1,15 +1,11 @@
-import ItemList from "../ItemList/ItemList";
-
-
-
 const Landing = (props) => {
   
   return (
     <main>
-      <h1>Welcome!</h1>
-        {props.items.map((item) => (
-          <p key={item._id}>{item.title}</p>
-        ))}
+      <h1>Bag of Holding</h1>
+      <ul>
+      {props.items.map(item => <li>{item.name}</li>)}
+      </ul>
     </main>
   );
 };
