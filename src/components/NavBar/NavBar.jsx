@@ -8,31 +8,23 @@ const NavBar = ({ handleSignout }) => {
     <>
       {user ? (
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/items">Inventory</Link>
-            </li>
-            <li>
-              <Link to="/items/new">Add Item</Link>
-            </li>
-            <li>
+          
+              <Link to="/">Home </Link>           
+              <Link to="/items">Inventory </Link>          
+              <Link to="/items/new">Add Item </Link>
               <Link to="" onClick={handleSignout}>
                 Sign Out
               </Link>
-            </li>
-          </ul>
+          
         </nav>
       ) : (
         <nav>
           <ul>
             <li>
-              <Link to="/signin">Sign In</Link>
+              <Link to="/signin">Sign In </Link>
             </li>
             <li>
-              <Link to="/signup">Sign Up</Link>
+              <Link to="/signup">Sign Up </Link>
             </li>
           </ul>
         </nav>

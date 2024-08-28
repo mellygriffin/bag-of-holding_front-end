@@ -69,7 +69,7 @@ const App = () => {
           {user ? (
             // Protected Routes
             <>
-              <Route path="/" element={<Dashboard user={user} />} />
+              <Route path="/" element={<Dashboard user={user} items={items}/>} />
 
               <Route path="/items/:category" element={<ItemList items={items} />} />
 
@@ -82,7 +82,7 @@ const App = () => {
             </>
           ) : (
             // Public Routes
-            <Route path="/" element={<Landing />} />
+            <Route path="/" element={<Landing items={items}/>} />
           )}
           <Route path="/signup" element={<SignupForm setUser={setUser} />} />
           <Route path="/signin" element={<SigninForm setUser={setUser} />} />
