@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as itemService from '../../services/itemService';
+import './ItemForm.css'
 
 const ItemForm = (props) => {
   const { itemId } = useParams();
@@ -40,8 +41,9 @@ const ItemForm = (props) => {
 
       return (
         <main>
-            <form onSubmit={handleSubmit}>
-              <h1>{itemId ? 'Edit Item' : 'New Item'}</h1>
+            <form className="wholeform" onSubmit={handleSubmit}>
+              <div id="newform">
+              <h1 id="page-title">{itemId ? 'Edit Item' : 'New Item'}</h1>
                 <label htmlFor="name">Name</label>
                 <input
                 required
@@ -84,10 +86,11 @@ const ItemForm = (props) => {
                 id="description"
                 value={formData.description}
                 onChange={handleChange}
-                style={{ width: '200px', height: '100px' }}
+                // style={{ width: '200px', height: '100px' }}
                 />
                 <p></p>
                 <button type="submit">Submit</button>
+                </div>
             </form>
         </main>
       );
