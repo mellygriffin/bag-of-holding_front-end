@@ -28,21 +28,14 @@
       padding-left: 20px;
   }
 
-  #landing-desc {
+  #dashboard-desc {
       margin: 20px;
       text-wrap: wrap;
       font-weight: bold;
       max-width: 800px;
   }
 
-  #disclaimer {
-      margin: 20px;
-      font-style: italic;
-      text-wrap: wrap;
-      max-width: 800px;
-  }
-
-  #landing-list {
+  #dashboard-list {
       display: flex;
       flex-direction: row;
       place-items: center;
@@ -53,7 +46,7 @@
       padding: 0;
   }
 
-  #landing-list li {
+  #dashboard-list li {
       margin: 20px;
       border: 2px solid white;
       padding: 20px;

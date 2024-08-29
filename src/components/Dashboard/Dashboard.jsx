@@ -1,5 +1,6 @@
 import { AuthedUserContext } from '../../App';
 import { useContext } from 'react';
+import './Dashboard.css';
 
 const Dashboard = (props) => {
 
@@ -13,14 +14,15 @@ const Dashboard = (props) => {
 
   return (
     <main>
-      <h1>Welcome, {user.username}</h1>
-        <ul>
-      <h2>
-        The last items you made were: 
+      <h1 id="page-title">Welcome, {user.username}</h1>
+      <h2 id="dashboard-desc">
+        The last items you created were: 
         </h2>
+        <ul id="dashboard-list">
+        <p></p>
         {latestItems.map((item) => {
           return (
-            <li key={item._id}>{item.name}</li>
+            <li id="item-name" key={item._id}>{item.name}<p id="item-desc">{item.description}</p></li>
           )
         })}
 
