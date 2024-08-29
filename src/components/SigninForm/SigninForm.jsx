@@ -24,9 +24,8 @@ const SigninForm = (props) => {
     e.preventDefault();
     try {
       const user = await authService.signin(formData);
-      console.log(user);
       props.setUser(user);
-      navigate('/');
+      navigate('/dashboard');
     } catch (err) {
       updateMessage(err.message);
     }
@@ -36,9 +35,9 @@ const SigninForm = (props) => {
     <main>
       <h1 id="page-title">Log In</h1>
       <p>{message}</p>
-      <div class="wholeform">
+      <div className="wholeform">
       <form id="signin-form" autoComplete="off" onSubmit={handleSubmit}>
-        <div class="form-content">
+        <div className="form-content">
           <label htmlFor="email">Username: </label>
           <input
             type="text"
@@ -49,7 +48,7 @@ const SigninForm = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div class="form-content">
+        <div className="form-content">
           <label htmlFor="password">Password: </label>
           <input
             type="password"
@@ -60,7 +59,7 @@ const SigninForm = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div class="form-content">
+        <div className="form-content">
           <button>Log In</button>
           <Link to="/">
             <button>Cancel</button>

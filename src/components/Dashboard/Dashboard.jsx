@@ -4,13 +4,16 @@ import './Dashboard.css';
 
 const Dashboard = (props) => {
 
+  console.log(props.items)
+
   const user = useContext(AuthedUserContext);
  
-  const userList = props.items.filter((item) => {
+  const userList = props.items && props.items.filter((item) => {
     return item.owner._id === user._id
   })
 
   const latestItems = userList.slice(-3)
+  console.log(latestItems)
 
   return (
     <main>

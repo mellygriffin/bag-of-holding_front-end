@@ -1,0 +1,80 @@
+.noto-sans {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  
+  body {
+      display: flex;
+      flex-direction: column;
+      background-image: url('../../assets/background-boh.png');
+      background-position: right 10px bottom 10px;;
+      background-size: 300px;
+      background-repeat: no-repeat;
+      background-color: #bb9982;
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+  }
+
+  #item-title {
+      display: flex;
+      font-family: "Noto Sans";
+      color: #463131;
+      justify-content: left;
+      font-size: x-large;
+      padding-left: 20px;
+  }
+
+  #item-type {
+      margin-bottom: 5px;
+      margin-left: 40px;
+      margin-right: 40px;
+      font-style: italic;
+      text-wrap: wrap;
+      max-width: 800px;
+  }
+
+
+  #item-details {
+      margin: 20px;
+      border: 2px solid white;
+      padding: 10px;
+      background-color: #efdccf;
+      max-width: 800px;
+    }
+
+    #item-description {
+        padding: 20px;
+    }
+
+    #item-magical {
+        padding: 20px;
+        font-size: large;
+    }
+
+    #edit-del-buttons {
+        margin: 5px;
+        padding: 10px;
+      }
+
+      #edit-button {
+        margin: 20px;
+        border: 2px solid rgb(189, 164, 164);
+        padding: 20px;
+        color: white;
+        background-color: #5f3a22;
+        border-radius: 20%;
+      }
+
+      #delete-button {
+        margin: 20px;
+        border: 2px solid rgb(178, 25, 25);
+        padding: 20px;
+        color: white;
+        background-color: #96271f;
+        border-radius: 20%;
+      }

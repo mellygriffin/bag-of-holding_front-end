@@ -1,0 +1,82 @@
+.noto-sans {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  
+  body {
+      display: flex;
+      flex-direction: column;
+      background-image: url('../../assets/background-boh.png');
+      background-position: right 10px bottom 10px;;
+      background-size: 300px;
+      background-repeat: no-repeat;
+      background-color: #bb9982;
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+  }
+
+  #page-title {
+      display: flex;
+      font-family: "Noto Sans";
+      color: #463131;
+      justify-content: left;
+      padding-left: 20px;
+  }
+
+  #inventory-desc {
+      margin-bottom: 5px;
+      margin-left: 40px;
+      margin-right: 40px;
+      font-style: italic;
+      text-wrap: wrap;
+      max-width: 800px;
+  }
+
+  #inventory-list {
+      display: flex;
+      flex-direction: row;
+      place-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style-type: none;
+      padding-left: 2rem;
+      margin: 5px;
+      padding: 0;
+  }
+
+  #item-box {
+      margin: 5px;
+      border: 2px solid white;
+      padding: 10px;
+      background-color: #efdccf;
+      max-width: 200px;
+    }
+
+    #item-box:hover {
+        margin: 5px;
+        border: 2px solid rgb(189, 164, 164);
+        padding: 10px;
+        background-color: #b59f91;
+        max-width: 200px;
+      }
+    
+    #item-name {
+      text-wrap: wrap;
+      color: #623532;
+      font-weight: bold;
+      font-size: large;
+      text-wrap: wrap;
+  }
+
+  #item-owner {
+      color: #322e2e;
+      font-weight: thin;
+      font-size: small;
+      text-wrap: wrap;
+      font-style: italic;
+  }

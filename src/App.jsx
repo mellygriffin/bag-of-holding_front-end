@@ -15,13 +15,23 @@ export const AuthedUserContext = createContext(null);
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
+  console.log(user)
 
   const [items, setItems] = useState([]);
 
   const [category, setCategory] = useState(null);
-
+  
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    const fetchAllItems = async () => {
+      const itemsData = await itemService.index();
+      setItems(itemsData);
+    };
 
+  if (user) fetchAllItems();
+  }, [user]);
+  console.log(items)
 
   const handleSignout = () => {
     authService.signout();
@@ -51,14 +61,6 @@ const App = () => {
   };
 
 
-  useEffect(() => {
-    const fetchAllItems = async () => {
-      const itemsData = await itemService.index();
-      setItems(itemsData);
-    };
-
-  fetchAllItems();
-  }, [user]);
 
   return (
     <>
@@ -68,7 +70,7 @@ const App = () => {
           {user ? (
             // Protected Routes
             <>
-              <Route path="/" element={<Dashboard user={user} items={items}/>} />
+              <Route path="/dashboard" element={<Dashboard user={user} items={items}/>} />
 
               <Route path="/items/:category" element={<ItemList items={items} />} />
 

@@ -1,8 +1,22 @@
 import './Landing.css';
+import { useEffect, useState } from 'react';
+import * as itemService from '../../services/itemService'
 
 const Landing = (props) => {
 
-  const landingItems = props.items.map(item => <li id="item-name">{item.name}<p id="item-desc">{item.description}</p></li>)
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchAllItems = async () => {
+      console.log('landing page')
+      const itemsData = await itemService.landingIndex();
+      setItems(itemsData);
+    };
+
+  fetchAllItems();
+  }, []);
+
+  const landingItems = items.map(item => <li key={item._id} id="item-name">{item.name}<p id="item-desc">{item.description}</p></li>)
   
   return (
     <main>

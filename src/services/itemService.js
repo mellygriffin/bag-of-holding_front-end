@@ -2,6 +2,7 @@ const BASE_URL = `${import.meta.env.VITE_EXPRESS_BACKEND_URL}/items`;
 
 //Index Route - Items list
 const index = async () => {
+  console.log('hello')
     try {
       const res = await fetch(BASE_URL, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
@@ -11,6 +12,19 @@ const index = async () => {
       console.log(error);
     }
   };
+
+  //Landing index Route - Items list
+const landingIndex = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}/landing`, {
+      headers: {'Content-Type': 'application/json'},
+      // headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   //Show Route - Items Details
   const show = async (itemId) => {
@@ -75,6 +89,7 @@ const index = async () => {
   
   export { 
     index,
+    landingIndex,
     show,
     create,
     deleteItem,
