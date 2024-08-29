@@ -14,16 +14,47 @@
       padding-left: 20px;
   }
 
+  #landing-desc {
+      margin: 20px;
+      text-wrap: wrap;
+      font-weight: bold;
+  }
+
+  #disclaimer {
+      margin: 20px;
+      font-style: italic;
+      text-wrap: wrap;
+  }
+
   #landing-list {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       place-items: center;
-      color: #623532;
-      font-size: large;
       list-style-type: none;
       padding-left: 2rem;
       background-image: url(star.svg);
       background-position: 0 0;
       background-size: 1.6rem 1.6rem;
       background-repeat: no-repeat;
+      margin: 20px;
+      padding: 0;
+  }
+
+  #landing-list li {
+      margin: 20px;
+      border: 2px solid white;
+      padding: 20px;
+      background-color: #efdccf;
+  }
+
+  #item-name {
+      color: #623532;
+      font-weight: bold;
+      font-size: large;
+  }
+
+  #item-desc {
+      color: #322e2e;
+      font-weight: thin;
+      font-size: small;
   }
