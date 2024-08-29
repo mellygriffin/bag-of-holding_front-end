@@ -1,3 +1,12 @@
+.noto-sans {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  
   body {
       display: flex;
       flex-direction: column;
@@ -9,6 +18,7 @@
 
   #page-title {
       display: flex;
+      font-family: "Noto Sans";
       color: #463131;
       justify-content: left;
       padding-left: 20px;
@@ -18,24 +28,23 @@
       margin: 20px;
       text-wrap: wrap;
       font-weight: bold;
+      max-width: 800px;
   }
 
   #disclaimer {
       margin: 20px;
       font-style: italic;
       text-wrap: wrap;
+      max-width: 800px;
   }
 
   #landing-list {
       display: flex;
       flex-direction: row;
       place-items: center;
+      justify-content: center;
       list-style-type: none;
       padding-left: 2rem;
-      background-image: url(star.svg);
-      background-position: 0 0;
-      background-size: 1.6rem 1.6rem;
-      background-repeat: no-repeat;
       margin: 20px;
       padding: 0;
   }
@@ -45,16 +54,19 @@
       border: 2px solid white;
       padding: 20px;
       background-color: #efdccf;
+      max-width: 300px;
   }
 
   #item-name {
       color: #623532;
       font-weight: bold;
       font-size: large;
+      text-wrap: wrap;
   }
 
   #item-desc {
       color: #322e2e;
       font-weight: thin;
       font-size: small;
+      text-wrap: wrap;
   }

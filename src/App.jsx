@@ -11,7 +11,6 @@ import * as itemService from './services/itemService';
 import ItemDetails from './components/ItemDetails/ItemDetails';
 import CategoryList from './components/CategoriesList/CategoriesList';
 import ItemForm from './components/ItemForm/ItemForm';
-
 export const AuthedUserContext = createContext(null);
 
 const App = () => {
