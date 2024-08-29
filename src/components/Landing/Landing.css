@@ -1,0 +1,29 @@
+  body {
+      display: flex;
+      flex-direction: column;
+      background-color: #bb9982;
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+  }
+
+  #page-title {
+      display: flex;
+      color: #463131;
+      justify-content: left;
+      padding-left: 20px;
+  }
+
+  #landing-list {
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+      color: #623532;
+      font-size: large;
+      list-style-type: none;
+      padding-left: 2rem;
+      background-image: url(star.svg);
+      background-position: 0 0;
+      background-size: 1.6rem 1.6rem;
+      background-repeat: no-repeat;
+  }
