@@ -68,7 +68,8 @@ const ItemForm = (props) => {
                 <option value="Books">Books</option>
                 </select>
                 <p></p>
-                <label htmlFor="isMagical">Is it Magical?</label>
+                <label id="magical" htmlFor="isMagical">Is it Magical?</label>
+                <p></p>
                 <input
                 type="checkbox"
                 name="isMagical"
