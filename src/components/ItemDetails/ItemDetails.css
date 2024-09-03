@@ -10,7 +10,7 @@
   body {
       display: flex;
       flex-direction: column;
-      background-image: url('../../assets/background-boh.png');
+      background-image: url('/boh-tile.png');
       background-position: right 10px bottom 10px;;
       background-size: 300px;
       background-repeat: no-repeat;
