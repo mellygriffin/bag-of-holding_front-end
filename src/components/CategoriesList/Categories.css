@@ -4,44 +4,49 @@
     font-weight: normal;
     font-style: normal;
     font-variation-settings:
-      "wdth" 100;
-  }
-  
-  body {
-      display: flex;
-      flex-direction: column;
-      background-image: url('../../assets/background-boh.png');
-      background-position: right 10px bottom 10px;;
-      background-size: 300px;
-      background-repeat: no-repeat;
-      background-color: #bb9982;
-      margin: 0;
-      min-width: 320px;
-      min-height: 100vh;
-  }
+        "wdth" 100;
+}
 
-  #page-title {
-      display: flex;
-      font-family: "Noto Sans";
-      color: #463131;
-      justify-content: left;
-      padding-left: 20px;
-  }
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../assets/boh-tile.png');
+    background-blend-mode: soft-light;
+    background-position: right 10px bottom 10px;
+    ;
+    background-size: 100px;
+    background-repeat: repeat;
+    background-color: #bb9982;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
 
-  #category-buttons {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      place-items: center;
-      justify-content: center;
-      font-family: "Noto Sans";
-      list-style-type: none;
-      padding-left: 2rem;
-      margin: 20px;
-      padding: 0;
-  }
+#page-title {
+    display: flex;
+    font-family: "Noto Sans";
+    color: #463131;
+    justify-content: left;
+    padding-left: 20px;
+    backdrop-filter: blur(10px);
+    width: fit-content;
+    height: fit-content;
+}
 
-  #Gear {
+#category-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    place-items: center;
+    justify-content: center;
+    font-family: "Noto Sans";
+    list-style-type: none;
+    padding-left: 2rem;
+    margin: 20px;
+    padding: 0;
+}
+
+#Gear {
     margin: 20px;
     color: white;
     border: 2px solid rgb(233, 123, 32);
@@ -108,9 +113,3 @@
     background-color: #115892;
     border: 2px solid rgb(255, 255, 255);
 }
-
-
-
-
-
-
