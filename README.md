@@ -1,5 +1,5 @@
 <div id="header" align="center">
-  <img src="public/assets/Disc_Click.png" width="250" height="200">
+  <img src="/assets/logo-placeholder.PNG" width="250" height="200">
 </div>
 
   <div id="description" align="center">
