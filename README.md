@@ -1,5 +1,5 @@
 <div id="header" align="center">
-  <img src="/assets/logo-placeholder.PNG" width="250" height="200">
+  <img src="public/assets/logo-placeholder.PNG" width="250" height="200">
 </div>
 
   <div id="description" align="center">
@@ -20,12 +20,12 @@
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
-  | <h3>Home Screen</h3> | <img src="assets/boh-home.png" width="700"/> |
-  | <h3>Sign In Page</h3> | <img src="assets/boh-signin.png" width="700"/> |
-  | <h3>User Dashboard</h3> | <img src="assets/boh-dash.png" width="700"/> |
-  | <h3>Categories of Items</h3> | <img src="assets/boh-categories.png" width="700"/> |
-  | <h3>List from "Gear" Category</h3> | <img src="assets/boh-gear.png" width="700"/> |
-   | <h3>Item Details</h3> | <img src="assets/boh-itemdesc.png" width="700"/> |
+  | <h3>Home Screen</h3> | <img src="public/assets/boh-home.png" width="700"/> |
+  | <h3>Sign In Page</h3> | <img src="public/assets/boh-signin.png" width="700"/> |
+  | <h3>User Dashboard</h3> | <img src="public/assets/boh-dash.png" width="700"/> |
+  | <h3>Categories of Items</h3> | <img src="public/assets/boh-categories.png" width="700"/> |
+  | <h3>List from "Gear" Category</h3> | <img src="public/assets/boh-gear.png" width="700"/> |
+   | <h3>Item Details</h3> | <img src="public/assets/boh-itemdesc.png" width="700"/> |
 
   ## :computer: Technologies Used
 
