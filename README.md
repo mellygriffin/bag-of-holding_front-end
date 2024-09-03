@@ -49,8 +49,8 @@
     4. Use the "Edit" or "Delete" buttons to make any changes to items you've made.<p>
 <p>
 <details open>
-  <summary>Deployed Link (Heroku)</summary>
-  <a href=""
+  <summary>Deployed Link (Netlify)</summary>
+  <a href="https://main--bag-of-holding-app.netlify.app/"
     >Bag of Holding</a
   >
 </details>
